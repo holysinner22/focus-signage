@@ -1,0 +1,6 @@
+# Focus Signage — allow search engines to crawl and index
+User-agent: *
+Allow: /
+
+# Sitemap (update the domain if you use a different one)
+Sitemap: https://focussignage.co.tz/sitemap.xml

@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#07080f" />
+  <title>Focus Signage — Branding • Printing • 3D &amp; 2D Signage</title>
+  <meta name="description" content="Focus Signage is a professional branding and signage company in Dar es Salaam, Tanzania. 3D/2D signboards, lightbox signage, vehicle branding, shop branding, and print. Get a quote." />
+  <meta name="keywords" content="Focus Signage, signage Dar es Salaam, 3D signboards Tanzania, branding, printing, vehicle branding, lightbox signage, business cards, roll-up banners" />
+  <meta name="author" content="Focus Signage" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://focussignage.co.tz/" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Focus Signage — Branding • Printing • 3D &amp; 2D Signage" />
+  <meta property="og:description" content="Professional branding, printing, and signage in Dar es Salaam, Tanzania. 3D/2D signboards, vehicle branding, lightbox signage, and more." />
+  <meta property="og:image" content="https://focussignage.co.tz/uploads/logoz.png" />
+  <meta property="og:url" content="https://focussignage.co.tz/" />
+  <meta property="og:locale" content="en_TZ" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Focus Signage — Branding • Printing • 3D & 2D Signage" />
+  <meta name="twitter:description" content="Professional branding, printing, and signage in Dar es Salaam, Tanzania." />
+  <link rel="icon" href="uploads/logoz.png" type="image/png" />
+  <link rel="apple-touch-icon" href="uploads/logoz.png" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('focus_theme');
+      if (savedTheme !== 'light') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', '');
+        const metaTheme = document.querySelector('meta[name="theme-color"]');
+        if (metaTheme) metaTheme.setAttribute('content', '#F2F5FC');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- Custom cursor -->
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Background layers -->
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="bg-mesh" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-aurora" aria-hidden="true"></div>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <!-- Lightbox -->
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">✕</button>
+    <img id="lightboxImg" src="" alt="Portfolio image" />
+  </div>
+
+  <!-- ─── HEADER ─────────────────────────────── -->
+  <header class="header" id="top">
+    <a class="brand" href="#top" aria-label="Focus Signage Home">
+      <img class="brand__logo" src="uploads/logoz.png" alt="Focus Signage" width="140" height="40" />
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <button class="nav__toggle" id="navToggle" aria-label="Open Menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__menu" id="navMenu">
+        <a href="#top" class="nav__menu-logo" aria-label="Focus Signage Home">
+          <img src="uploads/logoz.png" alt="Focus Signage" width="120" height="34" />
+        </a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#process">Process</a>
+        <a href="#work">Portfolio</a>
+        <a href="#contact" class="chip">Contact</a>
+        
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ─── HERO ──────────────────────────────── -->
+    <section class="hero" id="hero" data-parallax>
+      <div class="hero__glow" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+        <div class="hero__eyebrow reveal" data-reveal>
+          <span class="dot"></span>
+          Branding • Printing • 3D &amp; 2D Signage Solutions
+        </div>
+
+        <h1 class="hero__title reveal" data-reveal>
+          <span class="mono">WE DON'T PRINT.</span>
+          <span class="glow" id="typed"></span><span class="caret" aria-hidden="true"></span>
+        </h1>
+
+        <p class="hero__lead reveal" data-reveal>
+          We engineer <strong>first impressions</strong>. Professional branding and signage that helps businesses attract attention, communicate credibility, and increase customer engagement — from concept through installation.
+        </p>
+        <p class="hero__trust reveal" data-reveal>
+          A business is judged before it is experienced. Our role is to ensure that judgment works in your favor.
+        </p>
+
+        <div class="hero__cta reveal" data-reveal>
+          <a class="btn btn--primary" href="#contact">Get a Quote</a>
+          <a class="btn btn--ghost" href="#services">View Services</a>
+        </div>
+
+        <div class="hero__stats reveal" data-reveal>
+          <div class="stat">
+            <div class="stat__num"><span data-count="48">0</span>h</div>
+            <div class="stat__label">Fast Turnaround</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num"><span data-count="500">0</span>+</div>
+            <div class="stat__label">Projects Done</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num"><span data-count="100">0</span>%</div>
+            <div class="stat__label">Brand Visibility</div>
+          </div>
+        </div>
+
+        <a class="hero__scroll" href="#about" aria-label="Scroll to About">
+          <span class="mouse" aria-hidden="true"></span>
+          <span>Scroll</span>
+        </a>
+      </div>
+
+      <div class="hero__orbits" aria-hidden="true">
+        <div class="orbit orbit--1"></div>
+        <div class="orbit orbit--2"></div>
+        <div class="orbit orbit--3"></div>
+      </div>
+    </section>
+
+    <!-- ─── ABOUT ─────────────────────────────── -->
+    <section class="section about-section about-section--editorial" id="about">
+      <div class="container">
+        <div class="about-section__head">
+          <div class="eyebrow reveal" data-reveal>WHO WE ARE</div>
+          <h2 class="section__title reveal" data-reveal>Built to make brands <span class="gradient-text">impossible to ignore.</span></h2>
+          <p class="about-section__subtitle reveal" data-reveal>
+            Focus Signage is a professional branding and signage solutions company based in Dar es Salaam, Tanzania. We specialize in designing, producing, and installing high-impact visual branding that helps businesses attract attention, communicate credibility, and increase customer engagement.
+          </p>
+        </div>
+
+        <div class="about-editorial">
+          <!-- Split panel: image + CEO message -->
+          <div class="about-editorial__split reveal" data-reveal>
+            <div class="about-editorial__visual">
+              <div class="about-editorial__img-wrap">
+                <img src="uploads/ceo.jpeg" alt="Focus Signage leadership" width="560" height="640" loading="lazy" />
+                <div class="about-editorial__img-overlay"></div>
+                <blockquote class="about-editorial__quote">
+                  "Great signage isn't decoration — it's communication that works 24/7."
+                </blockquote>
+                <span class="about-editorial__caption mono">CEO MESSAGE</span>
+              </div>
+            </div>
+            <div class="about-editorial__copy">
+              <h3 class="about-editorial__heading">CEO Message</h3>
+              <p class="about-editorial__lead">Businesses do not compete only on price or product — they compete on <strong>perception</strong>. Before a customer walks through the door, they have already made a judgment based on what they see outside.</p>
+              <p>Focus Signage was founded to solve a simple but critical problem: many businesses invest heavily in their operations but overlook how they appear to customers. A weak storefront, unclear branding, or poorly installed signage quietly reduces trust and walk-in traffic. We built this company to change that.</p>
+              <p>Our goal is not simply to manufacture signboards. Our responsibility is to represent your brand in the physical world. Every project is approached from the perspective of the customer standing across the street — what will they notice, understand, and trust enough to enter?</p>
+              <p>We serve a wide range of businesses — restaurants, retail shops, offices, and service providers — but they all share the same objective: they want to be taken seriously. Our work supports that objective.</p>
+              <div class="about-editorial__location glass">
+                <span class="mono">DAR ES SALAAM</span>
+                <strong>Tanzania</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats bar -->
+          <div class="about-editorial__stats reveal" data-reveal>
+            <div class="about-editorial-stat">
+              <span class="about-editorial-stat__num" data-count="5">0</span><span class="about-editorial-stat__suffix">+</span>
+              <span class="about-editorial-stat__label">Years</span>
+            </div>
+            <div class="about-editorial-stat">
+              <span class="about-editorial-stat__num" data-count="500">0</span><span class="about-editorial-stat__suffix">+</span>
+              <span class="about-editorial-stat__label">Projects</span>
+            </div>
+            <div class="about-editorial-stat">
+              <span class="about-editorial-stat__num" data-count="100">0</span><span class="about-editorial-stat__suffix">%</span>
+              <span class="about-editorial-stat__label">Focus</span>
+            </div>
+          </div>
+
+          <!-- Mission / Vision / Values pillars -->
+          <div class="about-editorial__pillars reveal" data-reveal>
+            <article class="about-pillar" data-tilt>
+              <span class="about-pillar__num mono">01</span>
+              <h3>Mission</h3>
+              <p>To help businesses grow by making them visible, credible, and memorable through well-engineered branding and signage solutions.</p>
+            </article>
+            <article class="about-pillar" data-tilt>
+              <span class="about-pillar__num mono">02</span>
+              <h3>Vision</h3>
+              <p>To become one of the most trusted and recognizable branding and signage partners in East Africa, setting the standard for professional visual communication.</p>
+            </article>
+            <article class="about-pillar" data-tilt>
+              <span class="about-pillar__num mono">03</span>
+              <h3>Core Values</h3>
+              <p><strong>Clarity</strong> · <strong>Reliability</strong> · <strong>Durability</strong> · <strong>Creativity</strong> · <strong>Professionalism</strong> · <strong>Responsiveness</strong> · <strong>Customer Impact</strong></p>
+            </article>
+          </div>
+
+          <!-- Industries + Tech tiles -->
+          <div class="about-editorial__industries glass reveal" data-reveal>
+            <span class="mono about-editorial__industries-label">INDUSTRIES WE SERVE</span>
+            <ul class="about-editorial__industries-list">
+              <li>Retail Shops &amp; Boutiques</li>
+              <li>Restaurants &amp; Cafés</li>
+              <li>Corporate Offices</li>
+              <li>Service Businesses</li>
+              <li>Real Estate &amp; Property Management</li>
+              <li>Health &amp; Beauty Establishments</li>
+            </ul>
+          </div>
+
+          <div class="about-editorial__capabilities glass reveal" data-reveal>
+            <span class="mono about-editorial__capabilities-label">TECHNOLOGY &amp; FUTURE</span>
+            <p class="about-editorial__capabilities-text">We utilize modern fabrication techniques, precision cutting tools, and durable lighting systems designed for commercial use — including both indoor decorative installations and outdoor structural signage. Over the next five years, we aim to expand service coverage across Tanzania while improving production efficiency and introducing advanced fabrication methods.</p>
+          </div>
+
+          <!-- Marquee -->
+          <div class="about-editorial__marquee glass reveal" data-reveal aria-label="What we do">
+            <span class="mono about-editorial__marquee-label">WHAT WE DO</span>
+            <div class="marquee__wrap">
+              <div class="marquee__track">
+                <span>3D Signboards</span><i>◆</i>
+                <span>Lightbox Signage</span><i>◆</i>
+                <span>Vehicle Branding</span><i>◆</i>
+                <span>Sticker Installation</span><i>◆</i>
+                <span>Office &amp; Shop Branding</span><i>◆</i>
+                <span>Business Cards</span><i>◆</i>
+                <span>Roll-up Banners</span><i>◆</i>
+                <span>T-shirt Printing</span><i>◆</i>
+                <span>Promotional Materials</span><i>◆</i>
+                <!-- duplicate for seamless loop -->
+                <span>3D Signboards</span><i>◆</i>
+                <span>Lightbox Signage</span><i>◆</i>
+                <span>Vehicle Branding</span><i>◆</i>
+                <span>Sticker Installation</span><i>◆</i>
+                <span>Office &amp; Shop Branding</span><i>◆</i>
+                <span>Business Cards</span><i>◆</i>
+                <span>Roll-up Banners</span><i>◆</i>
+                <span>T-shirt Printing</span><i>◆</i>
+                <span>Promotional Materials</span><i>◆</i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SERVICES ──────────────────────────── -->
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="services-section__head">
+          <div class="eyebrow reveal" data-reveal>WHAT WE OFFER</div>
+          <h2 class="section__title reveal" data-reveal>Services that look like <span class="gradient-text">the future.</span></h2>
+          <p class="section__subtitle services-section__subtitle reveal" data-reveal>
+            Our work combines creativity, technical precision, and durable materials to deliver signage that performs reliably in real operating conditions.
+          </p>
+        </div>
+
+        <div class="services-bento">
+          <article class="service-card reveal" data-reveal data-tilt>
+            <span class="service-card__num mono">01</span>
+            <div class="service-card__icon" aria-hidden="true">⬡</div>
+            <h3 class="service-card__title">3D &amp; 2D Signboards</h3>
+            <p class="service-card__desc">Designed to make businesses immediately recognizable from a distance. These installations establish presence, strengthen brand perception, and guide customers with confidence.</p>
+          </article>
+
+          <article class="service-card service-card--featured reveal" data-reveal data-tilt>
+            <span class="service-card__num mono">02</span>
+            <div class="service-card__icon" aria-hidden="true">◈</div>
+            <h3 class="service-card__title">Lightbox Signage</h3>
+            <p class="service-card__desc">Illuminated signage ensures visibility day and night. Ideal for retail environments where operating hours extend into the evening and consistent brand presence is essential around the clock.</p>
+          </article>
+
+          <article class="service-card reveal" data-reveal data-tilt>
+            <span class="service-card__num mono">03</span>
+            <div class="service-card__icon" aria-hidden="true">⌬</div>
+            <h3 class="service-card__title">Shop &amp; Office Branding</h3>
+            <p class="service-card__desc">Interior and exterior branding solutions that transform spaces into professional environments, reinforcing credibility for both customers and partners.</p>
+          </article>
+
+          <article class="service-card reveal" data-reveal data-tilt>
+            <span class="service-card__num mono">04</span>
+            <div class="service-card__icon" aria-hidden="true">⟐</div>
+            <h3 class="service-card__title">Vehicle Branding</h3>
+            <p class="service-card__desc">Mobile advertising that continuously exposes the brand across different locations, increasing awareness beyond the physical business location.</p>
+          </article>
+
+          <article class="service-card reveal" data-reveal data-tilt>
+            <span class="service-card__num mono">05</span>
+            <div class="service-card__icon" aria-hidden="true">⟡</div>
+            <h3 class="service-card__title">Sticker Printing &amp; Installation</h3>
+            <p class="service-card__desc">Durable vinyl graphics used for windows, walls, and promotional displays, supporting campaigns and improving visual communication.</p>
+          </article>
+
+          <article class="service-card reveal" data-reveal data-tilt>
+            <span class="service-card__num mono">06</span>
+            <div class="service-card__icon" aria-hidden="true">⧉</div>
+            <h3 class="service-card__title">T-shirt &amp; Apparel Printing</h3>
+            <p class="service-card__desc">Team wear, event merch, and promotional clothing. Sharp, durable prints that survive washes and look professional — ideal for events and brand visibility.</p>
+          </article>
+
+          <article class="service-card reveal" data-reveal data-tilt>
+            <span class="service-card__num mono">07</span>
+            <div class="service-card__icon" aria-hidden="true">⌁</div>
+            <h3 class="service-card__title">Business Cards &amp; Stationery</h3>
+            <p class="service-card__desc">Business cards, letterheads, and branded materials that maintain consistent identity across all customer touchpoints.</p>
+          </article>
+
+          <article class="service-card reveal" data-reveal data-tilt>
+            <span class="service-card__num mono">08</span>
+            <div class="service-card__icon" aria-hidden="true">⟠</div>
+            <h3 class="service-card__title">Roll-up Banners &amp; Promo</h3>
+            <p class="service-card__desc">Banners and promotional materials for expos, launches, and in-store campaigns — high-impact visuals that work wherever you need them.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── WHY US ─────────────────────────────── -->
+    <section class="section why-section" id="why">
+      <div class="container">
+        <div class="why-section__head">
+          <div class="eyebrow reveal" data-reveal>WHY FOCUS</div>
+          <h2 class="section__title reveal" data-reveal>Our <span class="gradient-text">competitive advantages.</span></h2>
+          <p class="section__subtitle why-section__subtitle reveal" data-reveal>
+            We combine end-to-end project handling with readability-focused design and professional installation standards.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <article class="why-card reveal" data-reveal data-tilt>
+            <div class="why-card__icon" aria-hidden="true">✦</div>
+            <h3 class="why-card__title">End-to-End Project Handling</h3>
+            <p class="why-card__desc">Clients deal with one responsible partner from start to finish — consultation, design, production, and installation, all under one roof.</p>
+          </article>
+          <article class="why-card reveal" data-reveal data-tilt>
+            <div class="why-card__icon" aria-hidden="true">✷</div>
+            <h3 class="why-card__title">Readability-Focused Design</h3>
+            <p class="why-card__desc">We prioritize visibility and clarity, not decoration. Every concept maximizes how quickly and clearly your message is understood.</p>
+          </article>
+          <article class="why-card reveal" data-reveal data-tilt>
+            <div class="why-card__icon" aria-hidden="true">⟢</div>
+            <h3 class="why-card__title">Durable Material Selection</h3>
+            <p class="why-card__desc">Signage built for local weather conditions. We select materials that perform reliably indoors and outdoors for years.</p>
+          </article>
+          <article class="why-card reveal" data-reveal data-tilt>
+            <div class="why-card__icon" aria-hidden="true">⟣</div>
+            <h3 class="why-card__title">Professional Installation</h3>
+            <p class="why-card__desc">Safety and alignment are treated as critical quality factors. Professional fitting ensures your signage looks right and lasts.</p>
+          </article>
+          <article class="why-card reveal" data-reveal data-tilt>
+            <div class="why-card__icon" aria-hidden="true">⟟</div>
+            <h3 class="why-card__title">Business-Driven Approach</h3>
+            <p class="why-card__desc">Every project aims to increase customer attention and trust. We measure success by the results our clients experience.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PROCESS ───────────────────────────── -->
+    <section class="section process-section" id="process">
+      <div class="container">
+        <div class="process-section__head">
+          <div class="eyebrow reveal" data-reveal>HOW IT WORKS</div>
+          <h2 class="section__title reveal" data-reveal>Our <span class="gradient-text">operational process.</span></h2>
+          <p class="section__subtitle process-section__subtitle reveal" data-reveal>
+            Five clear steps from consultation to follow-up support — no guesswork, no surprises.
+          </p>
+        </div>
+
+        <div class="process-timeline reveal" data-reveal>
+          <div class="process-timeline__line" aria-hidden="true"></div>
+
+          <div class="process-step">
+            <div class="process-step__card glass">
+              <span class="process-step__num mono">01</span>
+              <h3 class="process-step__title">Consultation</h3>
+              <p class="process-step__desc">Understanding your business, location, and target audience so we recommend the right solutions and deliver a clear quote.</p>
+            </div>
+            <div class="process-step__dot-wrap">
+              <div class="process-step__dot" aria-hidden="true">01</div>
+            </div>
+            <div class="process-step__empty"></div>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step__empty"></div>
+            <div class="process-step__dot-wrap">
+              <div class="process-step__dot" aria-hidden="true">02</div>
+            </div>
+            <div class="process-step__card glass">
+              <span class="process-step__num mono">02</span>
+              <h3 class="process-step__title">Design Development</h3>
+              <p class="process-step__desc">Creating a visual concept that maximizes readability and brand recognition. You review and approve before production.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step__card glass">
+              <span class="process-step__num mono">03</span>
+              <h3 class="process-step__title">Production</h3>
+              <p class="process-step__desc">Manufacturing using appropriate materials for durability and safety. Every piece is checked before it leaves our workshop.</p>
+            </div>
+            <div class="process-step__dot-wrap">
+              <div class="process-step__dot" aria-hidden="true">03</div>
+            </div>
+            <div class="process-step__empty"></div>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step__empty"></div>
+            <div class="process-step__dot-wrap">
+              <div class="process-step__dot" aria-hidden="true">04</div>
+            </div>
+            <div class="process-step__card glass">
+              <span class="process-step__num mono">04</span>
+              <h3 class="process-step__title">Installation</h3>
+              <p class="process-step__desc">Professional fitting ensuring alignment, electrical safety, and longevity. On-site installation done right, first time.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step__card glass">
+              <span class="process-step__num mono">05</span>
+              <h3 class="process-step__title">Follow-up Support</h3>
+              <p class="process-step__desc">Ensuring the installation performs as intended over time. We stand behind our work and your brand.</p>
+            </div>
+            <div class="process-step__dot-wrap">
+              <div class="process-step__dot" aria-hidden="true">05</div>
+            </div>
+            <div class="process-step__empty"></div>
+          </div>
+
+          <div class="process-step__cta">
+            <a class="btn btn--primary" href="#contact">Start your project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PORTFOLIO ─────────────────────────── -->
+    <section class="section portfolio-section" id="work">
+      <div class="container">
+        <div class="portfolio-section__head">
+          <div class="eyebrow reveal" data-reveal>PORTFOLIO &amp; ACHIEVEMENTS</div>
+          <h2 class="section__title reveal" data-reveal>Our <span class="gradient-text">work</span></h2>
+          <p class="section__subtitle portfolio-section__subtitle reveal" data-reveal>
+            Focus Signage has successfully completed branding installations for multiple commercial establishments across Dar es Salaam. Our projects consistently help clients increase walk-in traffic and improve brand recognition.
+          </p>
+        </div>
+
+        <div class="portfolio-gallery">
+          <article class="portfolio-card reveal" data-reveal data-tilt>
+            <a class="portfolio-card__link" href="uploads/pic1.jpeg" data-lightbox aria-label="View project 1">
+              <div class="portfolio-card__media">
+                <img src="uploads/pic1.jpeg" alt="Focus Signage project — signage or branding" width="400" height="300" loading="lazy" />
+                <div class="portfolio-card__overlay"></div>
+                <span class="portfolio-card__tag mono">Project 1</span>
+              </div>
+              <div class="portfolio-card__body">
+                <h3 class="portfolio-card__title">Project 1</h3>
+                <p class="portfolio-card__meta">Signage &amp; branding</p>
+              </div>
+            </a>
+          </article>
+          <article class="portfolio-card reveal" data-reveal data-tilt>
+            <a class="portfolio-card__link" href="uploads/pic2.jpeg" data-lightbox aria-label="View project 2">
+              <div class="portfolio-card__media">
+                <img src="uploads/pic2.jpeg" alt="Focus Signage project — signage or branding" width="400" height="300" loading="lazy" />
+                <div class="portfolio-card__overlay"></div>
+                <span class="portfolio-card__tag mono">Project 2</span>
+              </div>
+              <div class="portfolio-card__body">
+                <h3 class="portfolio-card__title">Project 2</h3>
+                <p class="portfolio-card__meta">Signage &amp; branding</p>
+              </div>
+            </a>
+          </article>
+          <article class="portfolio-card reveal" data-reveal data-tilt>
+            <a class="portfolio-card__link" href="uploads/pic3.jpeg" data-lightbox aria-label="View project 3">
+              <div class="portfolio-card__media">
+                <img src="uploads/pic3.jpeg" alt="Focus Signage project — signage or branding" width="400" height="300" loading="lazy" />
+                <div class="portfolio-card__overlay"></div>
+                <span class="portfolio-card__tag mono">Project 3</span>
+              </div>
+              <div class="portfolio-card__body">
+                <h3 class="portfolio-card__title">Project 3</h3>
+                <p class="portfolio-card__meta">Signage &amp; branding</p>
+              </div>
+            </a>
+          </article>
+          <article class="portfolio-card reveal" data-reveal data-tilt>
+            <a class="portfolio-card__link" href="uploads/pic4.jpeg" data-lightbox aria-label="View project 4">
+              <div class="portfolio-card__media">
+                <img src="uploads/pic4.jpeg" alt="Focus Signage project — signage or branding" width="400" height="300" loading="lazy" />
+                <div class="portfolio-card__overlay"></div>
+                <span class="portfolio-card__tag mono">Project 4</span>
+              </div>
+              <div class="portfolio-card__body">
+                <h3 class="portfolio-card__title">Project 4</h3>
+                <p class="portfolio-card__meta">Signage &amp; branding</p>
+              </div>
+            </a>
+          </article>
+          <article class="portfolio-card reveal" data-reveal data-tilt>
+            <a class="portfolio-card__link" href="uploads/pic5.jpeg" data-lightbox aria-label="View project 5">
+              <div class="portfolio-card__media">
+                <img src="uploads/pic5.jpeg" alt="Focus Signage project — signage or branding" width="400" height="300" loading="lazy" />
+                <div class="portfolio-card__overlay"></div>
+                <span class="portfolio-card__tag mono">Project 5</span>
+              </div>
+              <div class="portfolio-card__body">
+                <h3 class="portfolio-card__title">Project 5</h3>
+                <p class="portfolio-card__meta">Signage &amp; branding</p>
+              </div>
+            </a>
+          </article>
+          <article class="portfolio-card reveal" data-reveal data-tilt>
+            <a class="portfolio-card__link" href="uploads/pic6.jpeg" data-lightbox aria-label="View project 6">
+              <div class="portfolio-card__media">
+                <img src="uploads/pic6.jpeg" alt="Focus Signage project — signage or branding" width="400" height="300" loading="lazy" />
+                <div class="portfolio-card__overlay"></div>
+                <span class="portfolio-card__tag mono">Project 6</span>
+              </div>
+              <div class="portfolio-card__body">
+                <h3 class="portfolio-card__title">Project 6</h3>
+                <p class="portfolio-card__meta">Signage &amp; branding</p>
+              </div>
+            </a>
+          </article>
+          <article class="portfolio-card reveal" data-reveal data-tilt>
+            <a class="portfolio-card__link" href="uploads/pic7.jpeg" data-lightbox aria-label="View project 7">
+              <div class="portfolio-card__media">
+                <img src="uploads/pic7.jpeg" alt="Focus Signage project — signage or branding" width="400" height="300" loading="lazy" />
+                <div class="portfolio-card__overlay"></div>
+                <span class="portfolio-card__tag mono">Project 7</span>
+              </div>
+              <div class="portfolio-card__body">
+                <h3 class="portfolio-card__title">Project 7</h3>
+                <p class="portfolio-card__meta">Signage &amp; branding</p>
+              </div>
+            </a>
+          </article>
+          <article class="portfolio-card reveal" data-reveal data-tilt>
+            <a class="portfolio-card__link" href="uploads/pic8.jpeg" data-lightbox aria-label="View project 8">
+              <div class="portfolio-card__media">
+                <img src="uploads/pic8.jpeg" alt="Focus Signage project — signage or branding" width="400" height="300" loading="lazy" />
+                <div class="portfolio-card__overlay"></div>
+                <span class="portfolio-card__tag mono">Project 8</span>
+              </div>
+              <div class="portfolio-card__body">
+                <h3 class="portfolio-card__title">Project 8</h3>
+                <p class="portfolio-card__meta">Signage &amp; branding</p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ───────────────────────────── -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-section__head">
+          <div class="eyebrow reveal" data-reveal>GET IN TOUCH</div>
+          <h2 class="section__title reveal" data-reveal>Let's build your next <span class="gradient-text">impression.</span></h2>
+          <p class="section__subtitle contact-section__subtitle reveal" data-reveal>
+            Get a quote fast — we'll reply with the best option for your budget and timeline.
+          </p>
+        </div>
+
+        <div class="contact-premium">
+          <div class="contact-premium__cards">
+            <a class="contact-card contact-card--wa reveal" data-reveal data-tilt href="https://wa.me/255654508394" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+              <span class="contact-card__icon" aria-hidden="true">💬</span>
+              <h3 class="contact-card__title">WhatsApp</h3>
+              <p class="contact-card__desc">Fastest way to get a quote. We reply quickly with pricing and next steps.</p>
+              <span class="contact-card__value">+255 654 508 394</span>
+            </a>
+            <a class="contact-card contact-card--email reveal" data-reveal data-tilt href="mailto:bwireemanuel8@gmail.com" aria-label="Send email">
+              <span class="contact-card__icon" aria-hidden="true">✉</span>
+              <h3 class="contact-card__title">Email</h3>
+              <p class="contact-card__desc">For detailed briefs and formal requests. We'll respond with a tailored proposal.</p>
+              <span class="contact-card__value">bwireemanuel8@gmail.com</span>
+            </a>
+            <a class="contact-card contact-card--ig reveal" data-reveal data-tilt href="https://instagram.com/focus_signage" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram">
+              <span class="contact-card__icon" aria-hidden="true">📷</span>
+              <h3 class="contact-card__title">Instagram</h3>
+              <p class="contact-card__desc">See our latest work and drop a DM. We're active and love hearing from you.</p>
+              <span class="contact-card__value">@focus_signage</span>
+            </a>
+          </div>
+
+          <div class="contact-premium__footer glass reveal" data-reveal>
+            <div class="contact-premium__location">
+              <span class="mono">LOCATION</span>
+              <strong>Dar es Salaam, Tanzania</strong>
+              <span class="contact-premium__area">Kinondoni</span>
+            </div>
+            <a class="btn btn--primary contact-premium__cta" href="https://wa.me/255654508394?text=Hello%20Focus%20Signage%2C%20I%20would%20like%20a%20quote%20for%20my%20project." target="_blank" rel="noopener noreferrer">Get a free quote on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ─── FOOTER ────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <div class="footer__brand">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <div>
+            <div class="footer__name">Focus Signage</div>
+            <div class="footer__tag mono">BRANDING • PRINTING • 3D &amp; 2D</div>
+          </div>
+        </div>
+        <div class="footer__meta">
+          <span class="mono">© <span id="year"></span></span>
+          <span class="mono">Dar es Salaam, Tanzania</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="back-to-top" href="#top" aria-label="Back to top">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
